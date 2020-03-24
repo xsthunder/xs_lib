@@ -2,10 +2,10 @@ import setuptools
 
 def read_file(name):
     with open(name, "r", encoding="UTF-8") as f:
-        return f.read()
+        return f.read().strip()
 
-version = read_file("./config/version.txt")
 project_name = read_file("./config/project_name.txt")
+version = __import__(project_name).__version__
 long_description = read_file('./README.md')
     
 
