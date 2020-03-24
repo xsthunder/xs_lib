@@ -1,6 +1,6 @@
 personal python lib [![Build Status](https://travis-ci.com/xsthunder/python-lib.svg?branch=master)](https://travis-ci.com/xsthunder/python-lib)
 ------
-last one see [xsthunder/python-lib-old: useful python pieces of code](https://github.com/xsthunder/python-lib-old)
+legacy python lib see [xsthunder/python-lib-old: useful python pieces of code](https://github.com/xsthunder/python-lib-old)
 
 ### TODO
 
