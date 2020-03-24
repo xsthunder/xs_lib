@@ -105,7 +105,7 @@ class Export_notebook:
 
     def __init__(self, dst, working_dir_tag = 'nb'):
         self.export_model = NBExporter()
-        self.export_test = NBExporter('test', prefix='test_')
+        self.export_test = NBExporter('(test_)?export', prefix='test_')
         self.dst = dst
         self.working_dir_tag = working_dir_tag
 
