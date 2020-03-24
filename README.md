@@ -50,9 +50,15 @@ clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_
 
 ### code and release
 
-1. code at dev
+1. code at [xsthunder/xs_lib at dev](https://github.com/xsthunder/xs_lib/tree/dev)
 
-2. update 
+2. update [xs_lib/version.py at dev · xsthunder/xs_lib](https://github.com/xsthunder/xs_lib/blob/dev/xs_lib/version.py)
+
+3. merge master and travis will deploy to pip
+
+### code structures
+
+
 
 #### Ref 
 
