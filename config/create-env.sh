@@ -9,6 +9,9 @@ env_name=test
 conda create -n $env_name IPython tqdm -c conda-forge -y
 
 conda activate $env_name
+
+
+# for development/test
 yes | pip install sure
 
 # sure=1.4.11
