@@ -4,6 +4,6 @@
 # file to edit: ./nb/template.ipynb
 import sys
 if __name__ == '__main__': sys.path.append('..')
-import x_lib.common as common
+import xs_lib.common as common
 
 import sure

@@ -4,7 +4,7 @@
 # file to edit: ./nb/ConstraintDict.ipynb
 import sys
 if __name__ == '__main__': sys.path.append('..')
-import x_lib.common as common
+import xs_lib.common as common
 
 import operator
 class ConstraintDict(dict):
