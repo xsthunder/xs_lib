@@ -3,8 +3,6 @@ import setuptools
 with open("README.md", "r", encoding="UTF-8") as fh:
     long_description = fh.read()
     
-with open("README.md", "r", encoding="UTF-8") as fh:
-    long_description = fh.read()
 
 setuptools.setup(
     name="xsthunder-python-lib", # Replace with your own username
