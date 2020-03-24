@@ -47,6 +47,7 @@ if IN_JUPYTER:
 elif IN_TRAVIS:
     tqdm = _simple_tqdm
 else :
+    from tqdm import _tqdm
     tqdm = _tqdm.tqdm
 
 def ex_command(code):

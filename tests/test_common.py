@@ -50,10 +50,11 @@ if IN_JUPYTER:
 elif IN_TRAVIS:
     tqdm = _simple_tqdm
 else :
+    from tqdm import _tqdm
     tqdm = _tqdm.tqdm
 
 for i in _simple_tqdm(range(10)):
-    print(i)
+    pass
 for i in tqdm(range(10)):
     pass
 
