@@ -45,8 +45,8 @@ clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_
 ### deps
 
 1. not all [deps](./config/create-env.sh) are necessary. only ipython are set in the `setup.py/deps`.
-2. `x_lib.common` supports dynamic import. feel free to import.
-3. to import other modules, please install corresponding deps first or you may come across error.
+2. `xs_lib.common` supports dynamic import. feel free to import.
+3. to import other modules, please install corresponding deps first or you may come across import error.
 4. It's recommanded to install all packages listed in [create-env.sh](./config/create-env.sh)
 
 ### code and release
