@@ -48,6 +48,12 @@ clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_
 3. to import other modules, please install corresponding deps first or you may come across error.
 4. It's recommanded to install all packages listed in [create-env.sh](./config/create-env.sh)
 
+### code and release
+
+1. code at dev
+
+2. update 
+
 #### Ref 
 
 [deployment - How can I use setuptools to generate a console_scripts entry point which calls `python -m mypackage`? - Stack Overflow](https://stackoverflow.com/questions/27784271/how-can-i-use-setuptools-to-generate-a-console-scripts-entry-point-which-calls)
