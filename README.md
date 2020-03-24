@@ -1,6 +1,6 @@
 personal python lib [![Build Status](https://travis-ci.com/xsthunder/python-lib.svg?branch=master)](https://travis-ci.com/xsthunder/python-lib)
 ------
-last one see [xsthunder/python-lib-old: useful python pieces of code](https://github.com/xsthunder/python-lib-old)
+legacy python lib see [xsthunder/python-lib-old: useful python pieces of code](https://github.com/xsthunder/python-lib-old)
 
 ### TODO
 
@@ -13,7 +13,8 @@ last one see [xsthunder/python-lib-old: useful python pieces of code](https://gi
 ### Features
 
 1. Full test with traivis to make sure things are on rail.
- 
+2. list of function see [doc](./doc/README.md)
+
 ## Install and Run
 
 ### Install via pip
@@ -22,7 +23,9 @@ last one see [xsthunder/python-lib-old: useful python pieces of code](https://gi
 
 ### Use in Code
 
-#### use for single file
+#### use for single `ipynb` file
+
+export the `ipynb` file
 
 ```python
 nbe = common.NBExporter()
@@ -38,6 +41,12 @@ clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_
 
 [for conda](./config/create-env.sh)
 
+### deps
+
+1. not all [deps](./config/create-env.sh) are necessary. only ipython are set in the `setup.py/deps`.
+2. `x_lib.common` supports dynamic import. feel free to import.
+3. to import other modules, please install corresponding deps first or you may come across error.
+4. It's recommanded to install all packages listed in [create-env.sh](./config/create-env.sh)
 
 #### Ref 
 
