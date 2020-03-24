@@ -111,7 +111,9 @@ class NBExporter:
         print(f"Converted {fname} to {output_path}")
 
 class Export_notebook:
-
+    """
+    export notebook in a project
+    """
     def __init__(self, dst, working_dir_tag = 'nb'):
         self.export_model = NBExporter()
         self.export_test = NBExporter('(test_)?export', prefix='test_')
