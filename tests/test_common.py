@@ -24,7 +24,6 @@ IN_JUPYTER = isnotebook()
 print(IN_TRAVIS,'IN_TRAVIS' )
 print( IN_JUPYTER , 'IN_JUPYTER ')
 
-from tqdm.notebook import tqdm as notebook_tqdm
 class _simple_tqdm:
     """
     for travis
@@ -46,6 +45,7 @@ class _simple_tqdm:
         return self.l
 
 if IN_JUPYTER:
+    from tqdm.notebook import tqdm as notebook_tqdm
     tqdm = notebook_tqdm
 elif IN_TRAVIS:
     tqdm = _simple_tqdm

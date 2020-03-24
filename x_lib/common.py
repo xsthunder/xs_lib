@@ -21,7 +21,6 @@ def isnotebook():
         return False      # Probably standard Python interpreter
 IN_JUPYTER = isnotebook()
 
-from tqdm.notebook import tqdm as notebook_tqdm
 class _simple_tqdm:
     """
     for travis
@@ -43,6 +42,7 @@ class _simple_tqdm:
         return self.l
 
 if IN_JUPYTER:
+    from tqdm.notebook import tqdm as notebook_tqdm
     tqdm = notebook_tqdm
 elif IN_TRAVIS:
     tqdm = _simple_tqdm

@@ -6,7 +6,8 @@ fi
 
 # py3.7 for asyncio.WindowsProactorEventLoopPolicy() support
 conda create -n test IPython -c conda-forge -y
-yes | pip install sure
+yes | pip install sure ipython tqdm
 
-# recommanded sure=1.4.11
-# recommanded ipython=7.8.0
+# sure=1.4.11
+# ipython=7.8.0
+# tqdm=4.36.1
