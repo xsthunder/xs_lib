@@ -12,4 +12,4 @@ pip install .\dist\$project_name-$version.tar.gz
 pip install .\dist\$project_name-$version-py3-none-any.whl
 
 # checking what directory are added
-# pip uninstall xs-lib 
+# pip uninstall $project_name
