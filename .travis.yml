@@ -11,5 +11,4 @@ install:
 script:
 - cd tests
 - bash run.sh
-- bash test_cli.sh
 - cd ..
