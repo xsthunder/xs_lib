@@ -1,3 +1,7 @@
+personal python lib [![Build Status](https://travis-ci.com/xsthunder/python-lib.svg?branch=master)](https://travis-ci.com/xsthunder/python-lib)
+------
+last one see [xsthunder/python-lib-old: useful python pieces of code](https://github.com/xsthunder/python-lib-old)
+
 ### TODO
 1. - [ ] fix three version replicates, in `rebuild.cmd`, `x_lib.__init__`, `setup.py`
 2. - [ ] create github repo
@@ -7,7 +11,7 @@
  
 ### Features
 
-4. Full test with traivis to make sure things are on rail.
+1. Full test with traivis to make sure things are on rail.
 
  
 ## Install and Run
@@ -18,11 +22,15 @@
 
 ### Use in Code
 
+#### use for single file
+
 ```python
-import download_youtube_subtitle.common as common
-import download_youtube_subtitle.main as download_youtube_subtitle
-# ...
+nbe = common.NBExporter()
+nbe('./pdb.ipynb', to='./')
 ```
+#### use for projcet
+
+clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_template)
 
 ## Development
 
@@ -37,4 +45,4 @@ import download_youtube_subtitle.main as download_youtube_subtitle
 
 [Packaging Python Projects — Python Packaging User Guide](http://packaging.python.org/tutorials/packaging-projects/)
 
-`./nb/notebook2script.py` from [course-v3/nbs/dl2 at master · fastai/course-v3](https://github.com/fastai/course-v3/tree/master/nbs/dl2)
+`notebook2script` from [course-v3/nbs/dl2 at master · fastai/course-v3](https://github.com/fastai/course-v3/tree/master/nbs/dl2)
