@@ -11,12 +11,6 @@ legacy python lib see [xsthunder/python-lib: useful python pieces of code](https
 3. merge master and travis will deploy to pip
 
 ### TODO
-
-1. - [x] fix three version replicates, in `rebuild.cmd`, `x_lib.__init__`, `setup.py`
-2. - [x] create github repo
-3. - [x] ex_command能用，默认目录就在jupyter目录下。即外部可以直接使用`xs_lib.common.ex_command`
-1. - [x] save_and_export_notebook使用了`./`就是本目录下要求一定有script；；解决方法是通过import而不是ex_command的方式保存文件
-1. - [x] save_and_export_notebook使用了支持多级目录
  
 ### Features
 
