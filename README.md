@@ -1,14 +1,16 @@
-personal python lib [![Build Status](https://travis-ci.com/xsthunder/python-lib.svg?branch=master)](https://travis-ci.com/xsthunder/python-lib)
+personal python lib [![Build Status](https://travis-ci.com/xsthunder/xs_lib.svg?branch=master)](https://travis-ci.com/xsthunder/xs_lib)
 ------
-legacy python lib see [xsthunder/python-lib-old: useful python pieces of code](https://github.com/xsthunder/python-lib-old)
+legacy python lib see [xsthunder/python-lib: useful python pieces of code](https://github.com/xsthunder/python-lib)
+
+### code and release
+
+1. code at [xsthunder/xs_lib at dev](https://github.com/xsthunder/xs_lib/tree/dev)
+
+2. update [xs_lib/version.py at dev · xsthunder/xs_lib](https://github.com/xsthunder/xs_lib/blob/dev/xs_lib/version.py)
+
+3. merge master and travis will deploy to pip
 
 ### TODO
-
-1. - [x] fix three version replicates, in `rebuild.cmd`, `x_lib.__init__`, `setup.py`
-2. - [x] create github repo
-3. - [x] ex_command能用，默认目录就在jupyter目录下。即外部可以直接使用`xs_lib.common.ex_command`
-1. - [x] save_and_export_notebook使用了`./`就是本目录下要求一定有script；；解决方法是通过import而不是ex_command的方式保存文件
-1. - [x] save_and_export_notebook使用了支持多级目录
  
 ### Features
 
@@ -49,13 +51,7 @@ clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_
 3. to import other modules, please install corresponding deps first or you may come across import error.
 4. It's recommanded to install all packages listed in [create-env.sh](./config/create-env.sh)
 
-### code and release
 
-1. code at [xsthunder/xs_lib at dev](https://github.com/xsthunder/xs_lib/tree/dev)
-
-2. update [xs_lib/version.py at dev · xsthunder/xs_lib](https://github.com/xsthunder/xs_lib/blob/dev/xs_lib/version.py)
-
-3. merge master and travis will deploy to pip
 
 ### code structures
 
