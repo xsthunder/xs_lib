@@ -19,9 +19,9 @@ legacy python lib see [xsthunder/python-lib: useful python pieces of code](https
 
 ## Install and Run
 
-### Install via [xs-lib · PyPI](https://pypi.org/project/xs-lib/0.0.5/)
+### Install via [xs-lib · PyPI](https://pypi.org/project/xs-lib/)
 
-1. `pip install xs-lib==0.0.5`
+1. `pip install xs-lib`
 
 ### Use in Code
 
