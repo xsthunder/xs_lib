@@ -4,11 +4,11 @@ legacy python lib see [xsthunder/python-lib: useful python pieces of code](https
 
 ### code and release
 
-1. code at [xsthunder/xs_lib at dev](https://github.com/xsthunder/xs_lib/tree/dev)
+1. code at [xsthunder/xs_lib at master](https://github.com/xsthunder/xs_lib/tree/master)
 
-2. update [xs_lib/version.py at dev · xsthunder/xs_lib](https://github.com/xsthunder/xs_lib/blob/dev/xs_lib/version.py)
+2. update [xs_lib/version.py at master· xsthunder/xs_lib](https://github.com/xsthunder/xs_lib/blob/master/xs_lib/version.py)
 
-3. merge master and travis will deploy to pip
+3. merge to releae and travis will deploy to pip
 
 ### TODO
  
