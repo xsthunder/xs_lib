@@ -38,7 +38,7 @@ mkdir -p test
 python ../xs_lib/common.py ../nb/common.ipynb ./test
 # compare behaviour
 diff ./test/test_common.py ./test_common.py
-diff ./test/common.py ./common.py
+diff ./test/common.py ../xs_lib/common.py
 rm -rf test
 
 # test export to ./
