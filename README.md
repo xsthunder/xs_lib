@@ -44,6 +44,8 @@ add `#test_export` to top of the code cell which will be exported to test and st
 
 add `#export` to top ot the code cell which will be exported to standard file.
 
+use [Sure 1.4.7 - Documentation — sure 1.4.7 documentation](https://sure.readthedocs.io/en/latest/) for `#test_export`.
+
 ## Development
 
 ### Environment Setup
