@@ -10,9 +10,7 @@ conda create -n $env_name IPython tqdm -c conda-forge -y
 
 conda activate $env_name
 
-
-# for development/test
-yes | pip install sure
+yes | pip install -r ./install_requires.txt
 
 # sure=1.4.11
 # ipython=7.8.0
