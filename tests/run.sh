@@ -1,4 +1,5 @@
 set -e
+set -x
 
 
 # set up conda env
@@ -10,10 +11,18 @@ then
     conda activate test
 fi
 
-# TRAVIS=true
+export TRAVIS=true
 
 # run test
 for file in ./*.py
 do
 	python $file
 done
+
+export CLI_TEST=true
+
+# test export to ./
+python ../xs_lib/common.py ../nb/common.ipynb
+
+# test export to file
+python ../xs_lib/common.py ../nb/common.ipynb test_nb.py

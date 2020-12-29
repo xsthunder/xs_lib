@@ -75,6 +75,9 @@ import os
 import os.path
 
 class NBExporter:
+    """
+    single notebook exporter
+    """
     def __init__(self, tag='export', prefix=''):
         self.tag = tag
         self.prefix = prefix
@@ -100,7 +103,7 @@ class NBExporter:
             fname_out = f'{self.prefix}{fname_out}'
             output_path = to/fname_out
 
-        elif(to[-3:]==".py"):
+        elif(str(to.absolute())[-3:]==".py"):
             output_path = to
         else:
             print("ERR a dir or a file ends with .py is needed")
@@ -127,39 +130,6 @@ class NBExporter:
         print(f"Converted {fname} to {output_path}")
 
 
-def cli_main(fname, dst='./'):
-    """
-    cli interface to convert ipynb to py
-
-    Examples:
-        nb2py ./nb/common.ipynb ./ # export to ./common.py and ./test_common.py
-        nb2py ./nb/common.ipynb ./common.export.test.py # export #export tag only
-    Argument:
-        fname: required. ipynb file to convert.
-        dst: default to `./`. where to put the exported py file.  export both #test_export and #export cell if a dir is provided. export #export only if a file is provided.
-    """
-    assert fname[-6:]==".ipynb"
-
-    export_model = NBExporter()
-    export_test = NBExporter('(test_)?export', prefix='test_')
-    if(os.path.isdir(dst)):
-        export_model(fname, dst)
-        export_test(fname, dst)
-    else:
-        export_model(fname, dst)
-
-def fire_main():
-    import fire
-    fire.Fire(cli_main)
-
-
-if __name__ == '__main__':
-    if CLI_TEST:
-        fire_main()
-    elif IN_JUPYTER or IN_TRAVIS:
-        pass
-    else:
-        fire_main()
 
 class Export_notebook:
     """
@@ -218,3 +188,38 @@ def restart_kernel():
     display(Javascript('IPython.notebook.kernel.restart();'))
 
 save_and_export_notebook = Export_notebook(exp_dir_name, working_dir_tag = working_dir_tag )
+
+
+def cli_main(fname, dst='./'):
+    """
+    cli interface to convert ipynb to py
+
+    Examples:
+        nb2py ./nb/common.ipynb ./ # export to ./common.py and ./test_common.py
+        nb2py ./nb/common.ipynb ./common.export.test.py # export #export tag only
+    Argument:
+        fname: required. ipynb file to convert.
+        dst: default to `./`. where to put the exported py file.  export both #test_export and #export cell if a dir is provided. export #export only if a file is provided.
+    """
+    assert fname[-6:]==".ipynb"
+
+    export_model = NBExporter()
+    export_test = NBExporter('(test_)?export', prefix='test_')
+    if(os.path.isdir(dst)):
+        export_model(fname, dst)
+        export_test(fname, dst)
+    else:
+        export_model(fname, dst)
+
+def fire_main():
+    import fire
+    fire.Fire(cli_main)
+
+
+if __name__ == '__main__':
+    if CLI_TEST:
+        fire_main()
+    elif IN_JUPYTER or IN_TRAVIS:
+        pass
+    else:
+        fire_main()
