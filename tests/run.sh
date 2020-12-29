@@ -4,7 +4,7 @@ set -x
 # test python install
 cd ..
 python setup.py sdist bdist_wheel
-pip install .\dist\*py3-none-any.whl
+pip install ./dist/xs_lib-*-py3-none-any.whl
 cd tests
 
 mkdir -p test
