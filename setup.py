@@ -25,6 +25,11 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
+    entry_points = {
+        "console_scripts": [
+            "nb2py = xs_lib.common:fire_main",
+        ]
+    },
     install_requires=install_requires,
     python_requires='>=3.4',
 )

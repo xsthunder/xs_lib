@@ -129,9 +129,14 @@ class NBExporter:
 
 def cli_main(fname, dst='./'):
     """
-    fname: ipynb file to convert.
-    export both #test_export and #export cell if a dir is provided.
-    export #export only if a file is provided.
+    cli interface to convert ipynb to py
+
+    Examples:
+        nb2py ./nb/common.ipynb ./ # export to ./common.py and ./test_common.py
+        nb2py ./nb/common.ipynb ./common.export.test.py # export #export tag only
+    Argument:
+        fname: required. ipynb file to convert.
+        dst: default to `./`. where to put the exported py file.  export both #test_export and #export cell if a dir is provided. export #export only if a file is provided.
     """
     assert fname[-6:]==".ipynb"
 

@@ -31,12 +31,26 @@ export the `ipynb` file
 
 ```python
 import xs_lib.common as common
+for i in common.tqdm(range(3)):
+    print(i)
 nbe = common.NBExporter()
 nbe('./pdb.ipynb', to='./')
 ```
 #### use for projcet
 
 clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_template)
+
+### Use in cli
+
+```
+pip install fire
+```
+
+## optional pakage tqdm
+
+```
+conda install tqdm
+```
 
 ## Usage suggestion
 
