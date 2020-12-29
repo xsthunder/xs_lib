@@ -46,14 +46,14 @@ class _simple_tqdm:
     def __len__(self):
         return self.l
 try:
-    from tqdm.notebook import tqdm as notebook_tqdm
-    tqdm = notebook_tqdm
-except:
-    try:
+    if IN_JUPYTER:
+        from tqdm.notebook import tqdm as notebook_tqdm
+        tqdm = notebook_tqdm
+    else :
         from tqdm import _tqdm
         tqdm = _tqdm.tqdm
-    except:
-        tqdm = _simple_tqdm
+except:
+    tqdm = _simple_tqdm
 
 
 for i in _simple_tqdm(range(10)):
