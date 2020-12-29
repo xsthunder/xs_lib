@@ -66,7 +66,7 @@ use [Sure 1.4.7 - Documentation — sure 1.4.7 documentation](https://sure.readt
 
 ### Environment Setup
 
-[for conda](./config/create-env.sh)
+[bash `./config/create-env.sh` for conda](./config/create-env.sh)
 
 ### deps
 
