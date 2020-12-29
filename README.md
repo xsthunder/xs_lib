@@ -31,6 +31,8 @@ export the `ipynb` file
 
 ```python
 import xs_lib.common as common
+
+# this will choose con tqdm
 for i in common.tqdm(range(3)):
     print(i)
 nbe = common.NBExporter()
@@ -44,6 +46,7 @@ clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_
 
 ```
 pip install fire
+nb2py --help
 ```
 
 ## optional pakage tqdm
