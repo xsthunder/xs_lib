@@ -31,12 +31,29 @@ export the `ipynb` file
 
 ```python
 import xs_lib.common as common
+
+# this will choose con tqdm
+for i in common.tqdm(range(3)):
+    print(i)
 nbe = common.NBExporter()
 nbe('./pdb.ipynb', to='./')
 ```
 #### use for projcet
 
 clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_template)
+
+### Use in cli
+
+```
+pip install fire
+nb2py --help
+```
+
+## optional pakage tqdm
+
+```
+conda install tqdm
+```
 
 ## Usage suggestion
 
