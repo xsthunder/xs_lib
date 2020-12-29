@@ -3,8 +3,7 @@ set -x
 
 # test python install
 cd ..
-python setup.py sdist bdist_wheel
-pip install ./dist/xs_lib-*-py3-none-any.whl
+bash rebuild.sh
 cd tests
 
 mkdir -p test
