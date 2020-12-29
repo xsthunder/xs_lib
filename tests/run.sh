@@ -1,6 +1,19 @@
 set -e
 set -x
 
+# test python install
+cd ..
+python setup.py sdist bdist_wheel
+pip install .\dist\*py3-none-any.whl
+cd tests
+
+mkdir -p test
+# test export to ./test
+nb2py ../nb/common.ipynb ./test
+# compare behaviour
+diff ./test/test_common.py ./test_common.py
+diff ./test/common.py ./common.py
+rm -rf test
 
 # set up conda env
 # https://docs.travis-ci.com/user/environment-variables/#default-environment-variables
