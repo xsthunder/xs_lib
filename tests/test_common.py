@@ -4,6 +4,7 @@
 # file to edit: ./nb/common.ipynb
 import os
 IN_TRAVIS=(os.getenv('TRAVIS', False) == 'true')
+CLI_TEST=(os.getenv('CLI_TEST', False) == 'true')
 exp_dir_name = 'xs_lib'
 working_dir_tag = 'nb'
 
@@ -22,7 +23,8 @@ def isnotebook():
 IN_JUPYTER = isnotebook()
 
 print(IN_TRAVIS,'IN_TRAVIS' )
-print( IN_JUPYTER , 'IN_JUPYTER ')
+print(IN_JUPYTER , 'IN_JUPYTER ')
+print(CLI_TEST , 'CLI_TEST ')
 
 class _simple_tqdm:
     """
@@ -43,15 +45,16 @@ class _simple_tqdm:
 
     def __len__(self):
         return self.l
-
-if IN_JUPYTER:
+try:
     from tqdm.notebook import tqdm as notebook_tqdm
     tqdm = notebook_tqdm
-elif IN_TRAVIS:
-    tqdm = _simple_tqdm
-else :
-    from tqdm import _tqdm
-    tqdm = _tqdm.tqdm
+except:
+    try:
+        from tqdm import _tqdm
+        tqdm = _tqdm.tqdm
+    except:
+        tqdm = _simple_tqdm
+
 
 for i in _simple_tqdm(range(10)):
     pass
@@ -69,6 +72,7 @@ import json,re
 from pathlib import Path
 import io
 import os
+import os.path
 
 class NBExporter:
     def __init__(self, tag='export', prefix=''):
@@ -90,8 +94,20 @@ class NBExporter:
         "Finds cells starting with `#export` and puts them into a new module"
         fname = Path(fname)
         to = Path(to)
-        fname_out = f'{fname.stem.split(".")[0]}.py'
-        fname_out = f'{self.prefix}{fname_out}'
+        if(os.path.isdir(to)):
+            # overwrite the defulat filename
+            fname_out = f'{fname.stem.split(".")[0]}.py'
+            fname_out = f'{self.prefix}{fname_out}'
+            output_path = to/fname_out
+
+        elif(to[-3:]==".py"):
+            output_path = to
+        else:
+            print("ERR a dir or a file ends with .py is needed")
+            exit(1)
+
+        if(os.path.exists(output_path)):print(f"overwriting {output_path}")
+
         main_dic = json.load(open(fname,'r',encoding="utf-8"))
         code_cells = [c for c in main_dic['cells'] if self.is_export(c)]
         module = f'''#################################################
@@ -104,11 +120,41 @@ class NBExporter:
         for cell in code_cells: module += ''.join(cell['source'][1:]) + '\n\n'
         # remove trailing spaces
         module = re.sub(r' +$', '', module, flags=re.MULTILINE)
-        output_path = to/fname_out
+
 
         with io.open(output_path, "w", encoding="utf-8") as f:
             f.write(module[:-2])
         print(f"Converted {fname} to {output_path}")
+
+
+def cli_main(fname, dst='./'):
+    """
+    fname: ipynb file to convert.
+    export both #test_export and #export cell if a dir is provided.
+    export #export only if a file is provided.
+    """
+    assert fname[-6:]==".ipynb"
+
+    export_model = NBExporter()
+    export_test = NBExporter('(test_)?export', prefix='test_')
+    if(os.path.isdir(dst)):
+        export_model(fname, dst)
+        export_test(fname, dst)
+    else:
+        export_model(fname, dst)
+
+def fire_main():
+    import fire
+    fire.Fire(cli_main)
+
+
+if __name__ == '__main__':
+    if CLI_TEST:
+        fire_main()
+    elif IN_JUPYTER or IN_TRAVIS:
+        pass
+    else:
+        fire_main()
 
 class Export_notebook:
     """
@@ -151,6 +197,7 @@ class Export_notebook:
         self.export_test(name, to=test_path)
 
         save_notebook() # for exitting
+
 
 
 
