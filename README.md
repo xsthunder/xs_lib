@@ -45,7 +45,6 @@ clone [xsthunder/jupyter_dev_template](https://github.com/xsthunder/jupyter_dev_
 ### Use in cli
 
 ```
-pip install fire
 nb2py --help
 ```
 
