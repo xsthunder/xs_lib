@@ -15,7 +15,9 @@ legacy python lib see [xsthunder/python-lib: useful python pieces of code](https
 ### Features
 
 1. Full test with traivis to make sure things are on rail.
-2. list of function see [doc](./doc/README.md)
+1. `xs_lib.ismain.main(__name__, main)` to define entrance
+1. `xs_lib.common.IN_TRAVIS` and `xs_lib.common.IN_JUPYTER` to tell current state, also allow bash env setting to `true` or `false` to overwrite.
+1. `xs_lib.common.CLI_TEST` is read from bash env to control cli. 
 
 ## Install and Run
 
