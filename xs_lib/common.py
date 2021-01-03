@@ -5,6 +5,16 @@
 import os
 IN_TRAVIS=(os.getenv('TRAVIS', False) == 'true')
 CLI_TEST=(os.getenv('CLI_TEST', False) == 'true')
+
+def overwrite_by_env(current_value, env_name):
+    if (os.getenv(env_name, False) == 'true'):
+        print(f"overwriting True by env {env_name}:true")
+        return True
+    if (os.getenv(env_name, False) == 'false'):
+        print(f"overwriting True by env {env_name}:false")
+        return False
+    return current_value
+
 exp_dir_name = 'xs_lib'
 working_dir_tag = 'nb'
 
@@ -21,6 +31,9 @@ def isnotebook():
     except NameError:
         return False      # Probably standard Python interpreter
 IN_JUPYTER = isnotebook()
+
+IN_TRAVIS=overwrite_by_env(IN_TRAVIS, "IN_TRAVIS")
+IN_JUPYTER =overwrite_by_env(IN_JUPYTER, "IN_JUPYTER")
 
 class _simple_tqdm:
     """
