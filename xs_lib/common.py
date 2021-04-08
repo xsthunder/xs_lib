@@ -65,7 +65,7 @@ except:
     tqdm = _simple_tqdm
 
 
-def ex_command(code):
+def ex_sh_cmd(code):
     ip = get_ipython()
     # this depends on the environment where jupyter launchs
     ip.run_cell(code)
@@ -184,12 +184,17 @@ class Export_notebook:
 import time
 
 def save_notebook():
-    from IPython.display import display, Javascript
-    display(Javascript('IPython.notebook.save_checkpoint();'))
+    ex_js_cmd('IPython.notebook.save_checkpoint();')
 
 def restart_kernel():
+    ex_js_cmd('IPython.notebook.kernel.restart();')
+
+def kill_kernel():
+    ex_js_cmd('IPython.notebook.kernel.kill();')
+
+def ex_js_cmd(cmd):
     from IPython.display import display, Javascript
-    display(Javascript('IPython.notebook.kernel.restart();'))
+    display(Javascript(cmd))
 
 save_and_export_notebook = Export_notebook(exp_dir_name, working_dir_tag = working_dir_tag )
 
