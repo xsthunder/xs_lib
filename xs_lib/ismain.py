@@ -9,7 +9,7 @@ import xs_lib.common as common
 def ismain(name):
     """
     test __name__=="__main__"
-    name: pass in __main__
+    name: pass in __name__
     """
     return name=="__main__"
 
